@@ -1,4 +1,4 @@
-(defproject hier-set "1.0.0-SNAPSHOT"
+(defproject hier-set "1.0.0"
   :description "A Clojure hierarchical set."
   :url "http://github.com/llasram/hier-set"
   :license {:name "Eclipse Public License - v 1.0"
