@@ -43,8 +43,8 @@ include `key` if `strict?` is true, defaulting to false."))
     (letfn [(ancestors-of [k]
               (when k (cons k (lazy-seq (ancestors-of (parents k))))))
             (not-ancestor? [k] (not (hcontains? k key)))]
-      (->> (rsubseq contents <= key) first ancestors-of
-           (drop-while not-ancestor?))))
+      (let [sibling (first (rsubseq contents <= key))]
+        (->> sibling ancestors-of (drop-while not-ancestor?)))))
   (ancestors [this key strict?]
     (strictify ancestors this key strict?))
   (descendants [this key]
