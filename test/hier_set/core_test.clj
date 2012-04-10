@@ -1,4 +1,4 @@
-(ns hier-set.test.core
+(ns hier-set.core-test
   (:require [hier-set.core :as hs])
   (:use [hier-set.core :only [hier-set hier-set-by]])
   (:use [clojure.test]))
