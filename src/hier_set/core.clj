@@ -31,7 +31,7 @@ include `key` if `strict?` is true, defaulting to false."))
   (toString [this] (str contents))
   (hashCode [this] (hash contents))
   (equals [this other]
-    (.equals this other))
+    (.equals contents other))
 
   IObj
   (meta [this] meta)

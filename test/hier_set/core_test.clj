@@ -12,6 +12,13 @@
   ([prefix s] (.startsWith ^String s ^String prefix))
   ([prefix s to] (.startsWith ^String s ^String prefix (int to))))
 
+(deftest test-fundamental
+  (let [hs (hier-set with-starts?)]
+    (testing "Able to compare equivalence with other sets"
+      (is (= #{} hs))
+      (is (= hs #{})))
+    (is (= "#{}" (str hs)) "Able to represent as a string")))
+
 (deftest test-basic
   (let [hs (hier-set with-starts? "foo" "foo.bar" "foo.bar.baz" "quux")]
     (testing "Able to retrieve ancestor primary elements"
