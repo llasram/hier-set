@@ -44,14 +44,16 @@ A trivial example:
   (:require [hier-set.core :as hs])
   (:use [hier-set.core :only [hier-set]])
 
-(let [hs (hier-set #(.startsWith %2 %1) "ack" "foo" "foo.bar" "quux")]
-  (get hs "bar")            ;;=> nil
-  (get hs "foo")            ;;=> ("foo")
-  (get hs "foo.bar.baz")    ;;=> ("foo.bar" "foo")
-  (hs/ancestors hs "bar")   ;;=> ()
-  (hs/ancestors hs "foo")   ;;=> ("foo")
-  (hs/descendants hs "foo") ;;=> ("foo" "foo.bar")
-  )
+(def with-starts? #(.startsWith %2 %1))
+
+(def hs (hier-set with-starts? "ack" "foo" "foo.bar" "quux")
+
+(get hs "bar")              ;;=> nil
+(get hs "foo")              ;;=> ("foo")
+(get hs "foo.bar.baz")      ;;=> ("foo.bar" "foo")
+(hs/ancestors hs "bar")     ;;=> ()
+(hs/ancestors hs "foo.baz") ;;=> ("foo")
+(hs/descendants hs "foo")   ;;=> ("foo" "foo.bar")
 ```
 
 ## License
