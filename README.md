@@ -58,6 +58,7 @@ A trivial example:
 
 ## License
 
-Copyright (C) 2012 Marshall T. Vandegrift <llasram@gmail.com>
+Copyright © 2012, 2014 Marshall Bockrath-Vandegrift.
 
-Distributed under the Eclipse Public License, the same as Clojure.
+Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.
