@@ -88,8 +88,8 @@ include `key` if `strict?` is true, defaulting to false."))
   (isEmpty [this] (.isEmpty contents))
   (iterator [this] (.iterator contents))
   (size [this] (.size contents))
-  (toArray [this] (.toArray contents))
-  (toArray [this a] (.toArray contents a))
+  (^objects toArray [this] (.toArray contents))
+  (^objects toArray [this ^objects a] (.toArray contents a))
 
   Sorted
   (comparator [this] (.comparator contents))
